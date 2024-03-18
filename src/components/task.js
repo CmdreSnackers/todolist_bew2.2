@@ -5,7 +5,7 @@ export default function Task(props) {
       <li className="list-group-item d-flex justify-content-between align-items-center">
         <div>
           <Check />
-          <span className="ms-2">Task {props.num}</span>
+          <span className="ms-2"> {props.text}</span>
         </div>
         <div>
           <Delete />
