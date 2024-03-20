@@ -1,13 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Form from "./components/form";
+import App from "./components/app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <div>
-    <div className="container">
-      <Form />
-    </div>
-  </div>
-);
+root.render(<App />);

@@ -1,28 +1,24 @@
 import Task from "./task";
+import { useState } from "react";
 
-export default function Task_list() {
-  const todos = [
-    {
-      id: 1,
-      text: "Task 1",
-      isCompleted: true,
-    },
-    {
-      id: 2,
-      text: "Task 2",
-      isCompleted: false,
-    },
-    {
-      id: 3,
-      text: "Task 3",
-      isCompleted: false,
-    },
-  ];
+export default function Task_list(props) {
+  const { todos, setTodos } = props;
   return (
     <ul className="list-group">
       {todos.map((task, index) => {
-        const { text, id } = task;
-        return <Task key={id} text={text} />;
+        const { name, text, id } = task;
+        return (
+          <Task
+            key={id}
+            name={name}
+            id={id}
+            text={text}
+            num={index + 1}
+            onDelete={(id) => {
+              setTodos(todos.filter((v) => v.id !== id));
+            }}
+          />
+        );
       })}
     </ul>
   );

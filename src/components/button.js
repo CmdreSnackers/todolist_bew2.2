@@ -1,19 +1,17 @@
-export function Delete(props) {
+export default function Button(props) {
+  //destructing to assign values
+  const {
+    color = "primary", // default
+    label,
+    onClick,
+  } = props;
   return (
-    <button className="btn btn-sm btn-danger">
-      <i className="bi bi-trash"></i>
+    //curly brackets to combine strings
+    <button
+      className={"btn btn-" + color + " btn-sm rounded ms-2"}
+      onClick={onClick}
+    >
+      {label}
     </button>
   );
-}
-
-export function Check(props) {
-  return (
-    <button className="btn btn-sm btn-success">
-      <i className="bi bi-check-square"></i>
-    </button>
-  );
-}
-
-export function Add(props) {
-  return <button className="btn btn-primary btn-sm rounded ms-2">Add</button>;
 }
